@@ -37,6 +37,7 @@ A **Retrieval-Augmented Generation (RAG)** system that allows users to upload PD
 -   **Auth:** Clerk (user authentication and session management)
 -   **Embeddings & Orchestration:** LangChain
 -   **Vector Database:** Qdrant (stores PDF embeddings for semantic search)
+-   **Containerization:** Docker
 
 ---
 
@@ -58,6 +59,5 @@ A **Retrieval-Augmented Generation (RAG)** system that allows users to upload PD
 The high-level flow is represented below:
 
 <img width="1370" height="646" alt="image" src="https://github.com/user-attachments/assets/7f0835fc-5fd6-406e-aa42-0d8ec565b446" />
-
 
 ---
