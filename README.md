@@ -31,13 +31,25 @@ A **Retrieval-Augmented Generation (RAG)** system that allows users to upload PD
 
 ## 🛠 Tech Stack
 
--   **Frontend:** Next.js (React-based UI for PDF upload & chat interface)
--   **Backend:** Express.js (API routes, file handling, communication with workers)
--   **Queue:** BullMQ (background job handling for PDF processing)
--   **Auth:** Clerk (user authentication and session management)
--   **Embeddings & Orchestration:** LangChain
--   **Vector Database:** Qdrant (stores PDF embeddings for semantic search)
--   **Containerization:** Docker
+-   Node.js
+-   Next.js
+-   Express.js
+-   BullMQ
+-   Clerk
+-   LangChain
+-   Qdrant
+-   Docker
+
+**More Info**
+
+-   **Node.js:** Runtime environment for building scalable backend services.
+-   **Next.js:** React-based framework used for building the frontend, including the PDF upload & chat interface.
+-   **Express.js:** Backend framework for API routes, file handling, and communication with workers.
+-   **BullMQ:** Message queue for handling background jobs such as PDF processing.
+-   **Clerk:** Authentication and session management for secure user access.
+-   **LangChain:** Framework for embeddings and orchestration of AI-powered workflows.
+-   **Qdrant:** Vector database that stores PDF embeddings for semantic search and retrieval.
+-   **Docker:** Containerization platform for standardized environments and deployment.
 
 ---
 
