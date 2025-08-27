@@ -28,9 +28,11 @@ type Message = {
 export const ChatComponent = () => {
     const [message, setMessage] = useState<string>("");
     const [messages, setMessages] = useState<Message[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleSendChatMessage = useCallback(async () => {
         setMessages((prev) => [...prev, { role: Role.USER, content: message }]);
+        setIsLoading(true);
         const response = await fetch(
             `http://localhost:8000/chat?message=${message}`
         );
@@ -44,6 +46,7 @@ export const ChatComponent = () => {
                 documents: data.docs,
             },
         ]);
+        setIsLoading(false);
     }, [message, setMessages]);
 
     return (
@@ -53,12 +56,13 @@ export const ChatComponent = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Type your query here..."
+                    disabled={isLoading}
                 />
                 <Button
                     onClick={handleSendChatMessage}
-                    disabled={!message.trim()}
+                    disabled={!message.trim() || isLoading}
                 >
-                    Send
+                    {isLoading ? "Sending..." : "Send"}
                 </Button>
             </div>
             <div className="flex flex-col gap-2 mt-20 mb-20 overflow-y-auto h-[calc(100vh-200px)]">
